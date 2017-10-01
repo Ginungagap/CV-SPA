@@ -3,19 +3,16 @@ import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MyMdModule} from './mymd.module';
 
 
 import { AppComponent } from './app.component';
 import { CvPageComponent } from './cv-page/cv-page.component';
 import { SiteListPageComponent } from './site-list-page/site-list-page.component';
 import { MatDesPageComponent } from './mat-des-page/mat-des-page.component';
+import {appRoutes} from './app-routes';
 
-
-const appRoutes: Routes = [
-  { path: '', component: CvPageComponent },
-  { path: 'site-list', component: SiteListPageComponent },
-  { path: 'mat-des', component: MatDesPageComponent },
-];
 
 @NgModule({
   declarations: [
@@ -28,7 +25,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MyMdModule
   ],
   providers: [],
   bootstrap: [AppComponent]
